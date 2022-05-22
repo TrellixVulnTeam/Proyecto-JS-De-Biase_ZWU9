@@ -1,0 +1,236 @@
+$fondo-header-footer: rgba(116, 116, 116, 0.582);
+$fondo-componentes: rgba(199, 199, 199, 0.575);
+$border: ("fino": 1px, "grueso": 2px);
+
+
+
+
+@mixin bordes{
+    border-left: none;
+    border-right: none;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    @include bordes;
+    background-color: $fondo-header-footer;
+    border-style: solid;
+    border-width: map-get($border, "fino");
+    text-align: center;
+    margin-bottom: 2%;
+    align-items: center;
+}
+
+
+
+
+
+.headerimg{
+    width: 200px;
+    
+    justify-self: start;  
+    
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+header li{
+    display: inline-block;
+    padding: 10px;
+    font-size: 30px;
+    
+    
+}
+
+
+body{
+    text-align: center;
+    font-family: sans-serif;
+    background-image: url(https://img.freepik.com/foto-gratis/muro-hormigon-gris_53876-88973.jpg?w=1380);
+    
+    
+    
+}
+
+
+
+footer{
+    @include bordes;
+    display: flex;
+    justify-content: center;
+    height: 4vh;
+    border-style: solid;
+    
+    border-width: map-get($border, "fino");
+    background-color: $fondo-header-footer;
+    text-align: center;
+    margin-top: 3%;
+}
+
+
+.nopoints{
+    list-style:none ;
+}
+
+
+
+.filters li{
+
+    display: inline-block;
+    padding: 10px;
+    font-size: 30px;
+}
+
+
+.boxfilter{
+    @extend .letraGrande;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom:10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-style: solid;
+    border-width: map-get($border, "grueso");
+    align-content: center;
+    padding-bottom: 10px;
+        
+
+}
+
+
+.bodyimg{
+    width: 44%;
+    
+}
+
+.carrito{
+    width: 20%;
+}
+
+
+
+.bodyimg1{
+    width: 65%;
+    
+}
+
+.bodyimg2{
+    width: 70%;
+    height: 250px;
+
+}
+
+
+.caja{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    list-style: none;
+    margin-top: 1%;
+    margin-bottom:0.5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 150%;
+    border-style: solid;
+    border-width: map-get($border, "grueso");
+    
+    background-color:$fondo-componentes;
+    text-align: center;
+    
+    
+}
+
+
+.caja_contacto{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    list-style: none;
+    margin-top: 1%;
+    margin-bottom:0.5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 150%;
+    border-style: solid;
+    border-width: map-get($border, "grueso");
+    
+    background-color:$fondo-componentes;
+    text-align: center;
+    
+    
+}
+
+
+
+.letraGrande{
+    font-size: 40px;
+}
+
+
+.map{
+
+    width: 90%;
+    padding-top: 1%;
+
+}
+
+.container button{
+    margin: 2%;
+}
+
+@media screen and (max-width: 768px) {
+
+    .letraGrande{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 15px;
+    }
+    .boxfilter a{
+        font-size: 12px;
+    }
+    .container button{
+        font-size: 12px;
+        margin: 1%;
+    }
+    .caja_contacto{
+        font-size: 80%;
+    }
+    .headerimg{
+        width: 40%;
+    }
+    .carrito{
+        width: 80%;
+    }
+}
+
+
+.btn{
+    background-color: $fondo-componentes;
+    font-weight: bold;
+    color: black;
+}
+
+
+.bordes{
+    border-radius: 5%;
+    background-color: $fondo-componentes;
+}
+
+.agrandar{
+    width: 100%;
+}
