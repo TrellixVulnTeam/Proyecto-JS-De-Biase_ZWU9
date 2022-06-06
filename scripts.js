@@ -12,6 +12,7 @@ class Producto {
     }
 }
 
+
 let formularioMaster6 = document.getElementById("master6")
 let formularioMaster12 = document.getElementById("master12")
 let formularioVisa6 = document.getElementById("visa6")
@@ -21,6 +22,8 @@ let formularioBorrarProductos = document.getElementById("borrarProductos")
 let botonListar = document.getElementById("listarProductos")
 let resultadoListar = document.getElementById("resultado")
 
+
+
 formularioMaster6.addEventListener("submit", datosMaster6)
 formularioMaster12.addEventListener("submit", datosMaster12)
 formularioVisa6.addEventListener("submit", datosVisa6)
@@ -28,6 +31,8 @@ formularioVisa12.addEventListener("submit", datosVisa12)
 formularioAgregarProductos.addEventListener("submit", datosAgregarProductos)
 formularioBorrarProductos.addEventListener("submit", datosBorrarProductos)
 botonListar.addEventListener("click", listarProductos)
+
+
 
 function datosMaster6(x){
     x.preventDefault()
@@ -107,8 +112,10 @@ function listarProductos(){
         li.innerHTML = producto.producto
         resultado.appendChild(li)
         resultado.appendChild(hr)
-        
-
-        
     })
 }
+
+
+
+
+
