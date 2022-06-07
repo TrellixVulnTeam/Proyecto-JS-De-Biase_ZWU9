@@ -13,6 +13,12 @@ for (let i = 0; i < localStorage.length; i++){
 
 }
 
+let del = document.getElementById("eliminar")
+
+del.addEventListener("click", ()=>{
+    localStorage.clear()
+    })
+
 let elementos = document.getElementById("productos")
 const total1 = total.reduce((acumulador, elemento) => acumulador + elemento, 0)
 let x = document.createElement("p")
@@ -22,8 +28,4 @@ $${total1}</p>`
                     
 elementos.appendChild(x)
 
-let del = document.getElementById("eliminar")
 
-del.addEventListener("click", ()=>{
-    localStorage.clear()
-    })
