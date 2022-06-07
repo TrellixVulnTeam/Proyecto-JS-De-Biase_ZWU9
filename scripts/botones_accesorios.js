@@ -22,13 +22,13 @@ let botonCarrito1 = document.getElementById("7")
 botonCarrito1.addEventListener("click", ()=>{
     botonCarrito1.innerHTML="Producto Agregado"
     let i = JSON.stringify(id_7)
-    
     localStorage.setItem("producto7", i)
 })
 
 botonCarrito1.addEventListener("mouseout", ()=>{
     botonCarrito1.innerHTML="Agregar al carrito"
 })
+
 
 let botonCarrito2 = document.getElementById("8")
 
@@ -43,6 +43,7 @@ botonCarrito2.addEventListener("mouseout", ()=>{
     botonCarrito2.innerHTML="Agregar al carrito"
 })
 
+
 let botonCarrito3 = document.getElementById("9")
 
 botonCarrito3.addEventListener("click", ()=>{
@@ -50,7 +51,6 @@ botonCarrito3.addEventListener("click", ()=>{
     let i = JSON.stringify(id_9)
     
     localStorage.setItem("producto9", i)
-    
     
 })
 
@@ -60,7 +60,6 @@ botonCarrito3.addEventListener("mouseout", ()=>{
 })
 
 let botonCarrito4 = document.getElementById("10")
-
 
 botonCarrito4.addEventListener("click", ()=>{
     botonCarrito4.innerHTML="Producto Agregado"
@@ -72,6 +71,7 @@ botonCarrito4.addEventListener("click", ()=>{
 
 botonCarrito4.addEventListener("mouseout", ()=>{
     botonCarrito4.innerHTML="Agregar al carrito"
+    
 })
 
 let botonCarrito5 = document.getElementById("11")

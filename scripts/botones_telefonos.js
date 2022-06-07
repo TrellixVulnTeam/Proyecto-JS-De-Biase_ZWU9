@@ -13,6 +13,13 @@ let id_3 = new Producto ("samsung", 12000)
 let id_4 = new Producto ("motorola x", 2600)
 let id_5 = new Producto ("samgung y", 54000)
 let id_6 = new Producto ("nokia z", 32800)
+let id_7 = new Producto ("Auriculares", 1000)
+let id_8 = new Producto ("Auriculares nokia", 2000)
+let id_9 = new Producto ("Auriculares samsung", 12000)
+let id_10 = new Producto ("Cargador x", 600)
+let id_11 = new Producto ("Cargador y", 4000)
+let id_12 = new Producto ("Cargador z", 800)
+
 
 
 
@@ -94,3 +101,4 @@ botonCarrito6.addEventListener("click", ()=>{
 botonCarrito6.addEventListener("mouseout", ()=>{
     botonCarrito6.innerHTML="Agregar al carrito"
 })
+
