@@ -20,7 +20,28 @@ let id_10 = new Producto ("Cargador x", 600)
 let id_11 = new Producto ("Cargador y", 4000)
 let id_12 = new Producto ("Cargador z", 800)
 
+const proximo = {
+    producto: "nextel",
+    precio: 2000
+}
 
+const {producto, precio} = proximo
+
+
+let x = document.getElementById("proximos")
+
+let y = document.createElement("div")
+y.innerHTML = `<div class="col-6 col-md-4">
+<div class="p-3 border border-dark border-2 bordes">   
+    <div><h2> ${producto}</h2></div>
+    <div><img src="images/celulares/nokia.jpg" alt="Telefono Nokia" class="bodyimg1"></div>
+    <div><p>Precio: $${precio}</p></div>
+
+    
+    
+</div>
+</div>`
+x.appendChild(y)
 
 
 
