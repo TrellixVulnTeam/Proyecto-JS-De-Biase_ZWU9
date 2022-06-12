@@ -12,10 +12,17 @@ for (let i = 0; i < localStorage.length; i++){
     p.innerHTML = valor.producto + " $" + valor.precio
     elementos.appendChild(p)
     
-    
-
 }
 
+function toasty(){
+    Toastify({
+        text:"Producto agregado",
+        duration: 3000,
+        style:{
+            background: 'linear-gradient(to right, #00b09b, #96c92d)'
+        }
+    }).showToast()
+}
 
 
 const xx = (localStorage.length > 0) ? true : false
@@ -30,6 +37,7 @@ function eliminarTodo(){
     fuera.appendChild(creacionFuera)
     let del = document.getElementById("eliminarDentro")
     del.addEventListener("click", ()=>{
+    toasty()
     localStorage.clear()
     })
 }

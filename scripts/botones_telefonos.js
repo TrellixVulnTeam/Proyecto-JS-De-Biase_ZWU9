@@ -25,101 +25,61 @@ const proximo = {
     precio: 2000
 }
 
-const {producto, precio} = proximo
+function alerta(){
+    Toastify({
+        text:"Producto agregado",
+        duration: 3000,
+        style:{
+            background: 'linear-gradient(to right, #00b09b, #96c92d)'
+        }
+    }).showToast()
+}
 
-
-let x = document.getElementById("proximos")
-
-let y = document.createElement("div")
-y.innerHTML = `<div class="col-6 col-md-4">
-<div class="p-3 border border-dark border-2 bordes">   
-    <div><h2> ${producto}</h2></div>
-    <div><img src="images/celulares/nokia.jpg" alt="Telefono Nokia" class="bodyimg1"></div>
-    <div><p>Precio: $${precio}</p></div>
-
-    
-    
-</div>
-</div>`
-x.appendChild(y)
-
-
+function guardar(b, c){
+    let a = JSON.stringify(b)
+    localStorage.setItem(c, a)
+}
 
 let botonCarrito1 = document.getElementById("1")
-
-botonCarrito1.addEventListener("click", ()=>{
-    botonCarrito1.innerHTML="Producto Agregado"
-    let i = JSON.stringify(id_1)
-    
-    localStorage.setItem("producto1", i)
-})
-
-botonCarrito1.addEventListener("mouseout", ()=>{
-    botonCarrito1.innerHTML="Agregar al carrito"
-})
-
 let botonCarrito2 = document.getElementById("2")
-
-botonCarrito2.addEventListener("click", ()=>{
-    botonCarrito2.innerHTML="Producto Agregado"
-    let i = JSON.stringify(id_2)
-    
-    localStorage.setItem("producto2", i)
-})
-
-botonCarrito2.addEventListener("mouseout", ()=>{
-    botonCarrito2.innerHTML="Agregar al carrito"
-})
-
 let botonCarrito3 = document.getElementById("3")
-
-botonCarrito3.addEventListener("click", ()=>{
-    botonCarrito3.innerHTML="Producto Agregado"
-    let i = JSON.stringify(id_3)
-    
-    localStorage.setItem("producto3", i)
-})
-
-botonCarrito3.addEventListener("mouseout", ()=>{
-    botonCarrito3.innerHTML="Agregar al carrito"
-})
-
 let botonCarrito4 = document.getElementById("4")
-
-botonCarrito4.addEventListener("click", ()=>{
-    botonCarrito4.innerHTML="Producto Agregado"
-    let i = JSON.stringify(id_4)
-    
-    localStorage.setItem("producto4", i)
-})
-
-botonCarrito4.addEventListener("mouseout", ()=>{
-    botonCarrito4.innerHTML="Agregar al carrito"
-})
-
 let botonCarrito5 = document.getElementById("5")
-
-botonCarrito5.addEventListener("click", ()=>{
-    botonCarrito5.innerHTML="Producto Agregado"
-    let i = JSON.stringify(id_5)
-    
-    localStorage.setItem("producto5", i)
-})
-
-botonCarrito5.addEventListener("mouseout", ()=>{
-    botonCarrito5.innerHTML="Agregar al carrito"
-})
-
 let botonCarrito6 = document.getElementById("6")
 
-botonCarrito6.addEventListener("click", ()=>{
-    botonCarrito6.innerHTML="Producto Agregado"
-    let i = JSON.stringify(id_6)
-    
-    localStorage.setItem("producto6", i)
+botonCarrito1.addEventListener("click", ()=>{
+    alerta()
+    guardar(id_1, "producto1")
 })
 
-botonCarrito6.addEventListener("mouseout", ()=>{
-    botonCarrito6.innerHTML="Agregar al carrito"
+
+botonCarrito2.addEventListener("click", ()=>{
+    alerta()
+    guardar(id_2, "producto2")
 })
+
+
+botonCarrito3.addEventListener("click", ()=>{
+    alerta()
+    guardar(id_3, "producto3")
+})
+
+
+botonCarrito4.addEventListener("click", ()=>{
+    alerta()
+    guardar(id_4, "producto4")
+})
+
+
+botonCarrito5.addEventListener("click", ()=>{
+    alerta()
+    guardar(id_5, "producto5")
+})
+
+
+botonCarrito6.addEventListener("click", ()=>{
+    alerta()
+    guardar(id_6, "producto6")
+})
+
 
