@@ -20,12 +20,12 @@ fetch("https://rickandmortyapi.com/api/character/1,2")
         if(numero > 0.5 ){
             Swal.fire({
                 title: "GANASTE UN PREMIO!",
-                text: "Felicitaciones, ganaste un codigo de descuento! Codigo: Promo2022",
+                text: "Felicitaciones, ganaste un codigo de descuento! Codigo: 2020020",
                 imageUrl:`${rickImagen}`,
                 background: 'linear-gradient(to right, #00b09b, #96c92d)'
                 
               }).then(function() {
-                window.location = "http://127.0.0.1:5500/index.html";
+                window.location = "http://127.0.0.1:5500/carrito.html";
             });
             
         }

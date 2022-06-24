@@ -38,6 +38,7 @@ function datosMaster6(x){
     x.preventDefault()
     let y = x.target
     let producto = y.children[1].value
+    
     let p = document.createElement("p")
     p.innerHTML = "El precio de cada cuota seria $" + producto*0.12 + " (12% de recargo)"
     formularioMaster6.appendChild(p)
