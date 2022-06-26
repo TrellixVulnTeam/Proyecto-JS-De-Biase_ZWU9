@@ -1,3 +1,4 @@
+
 //mostrar elementos del carrito
 
 let total = []
@@ -82,21 +83,32 @@ function descuento(input){
     input.preventDefault()
     let valor = input.target
     let producto = valor.children[1].value
-    if (producto == cuponDescuento){
-        console.log(producto)
-        let totalConDescuento = total1 - (total1*0.20)
-        let elemento = document.createElement("p")
-        elemento.innerHTML = `<hr>
-        <h3><p><b>Total de su compra con descuento del 20%</b></p>
-        <p>$${totalConDescuento}</p></h3>`
-        cupon.appendChild(elemento)
-        document.getElementById("texto").innerHTML = "<h3><p><b>CUPON DE DESCUENTO APLICADO</b></p></h3>"
-        document.getElementById("botonCalcular").remove()
-        toastyAceptado()
-    }
+    if(localStorage.length > 0){
+            if (producto == cuponDescuento){
+            console.log(producto)
+            let totalConDescuento = total1 - (total1*0.20)
+            let elemento = document.createElement("p")
+            elemento.innerHTML = `<hr>
+                                <h3><p><b>Total de su compra con descuento del 20%</b></p>
+                                    <p>$${totalConDescuento}</p></h3>`
+            cupon.appendChild(elemento)
+            document.getElementById("texto").innerHTML = "<h3><p><b>CUPON DE DESCUENTO APLICADO</b></p></h3>"
+            document.getElementById("botonCalcular").remove()
+            toastyAceptado()
+            }
+            else{
+                toastyDenegado()
+            }}
     else{
-        toastyDenegado()
+        Toastify({
+            text:"Por favor agregue productos al carrito",
+            duration: 3000,
+            style:{
+                background: 'linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)'
+            }
+        }).showToast()
     }
+    
 
 
 }
