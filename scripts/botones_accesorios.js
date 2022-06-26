@@ -1,18 +1,18 @@
-class Producto {
+class Accesorios {
     constructor(producto, precio){
         this.producto = producto
         this.precio = precio       
     }
 }
 
-let productosAgregados = []
 
-let id_7 = new Producto ("Auriculares", 1000)
-let id_8 = new Producto ("Auriculares nokia", 2000)
-let id_9 = new Producto ("Auriculares samsung", 12000)
-let id_10 = new Producto ("Cargador x", 600)
-let id_11 = new Producto ("Cargador y", 4000)
-let id_12 = new Producto ("Cargador z", 800)
+
+let id_7 = new Accesorios ("Auriculares", 1000)
+let id_8 = new Accesorios ("Auriculares nokia", 2000)
+let id_9 = new Accesorios ("Auriculares samsung", 12000)
+let id_10 = new Accesorios ("Cargador x", 600)
+let id_11 = new Accesorios ("Cargador y", 4000)
+let id_12 = new Accesorios ("Cargador z", 800)
 
 function alerta(){
     Toastify({

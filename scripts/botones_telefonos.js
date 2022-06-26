@@ -1,24 +1,19 @@
-class Producto {
+class Telefono {
     constructor(producto, precio){
         this.producto = producto
         this.precio = precio       
     }
 }
 
-let productosAgregados = []
 
-let id_1 = new Producto ("motorola", 11000)
-let id_2 = new Producto ("nokia", 20000)
-let id_3 = new Producto ("samsung", 12000)
-let id_4 = new Producto ("motorola x", 2600)
-let id_5 = new Producto ("samgung y", 54000)
-let id_6 = new Producto ("nokia z", 32800)
-let id_7 = new Producto ("Auriculares", 1000)
-let id_8 = new Producto ("Auriculares nokia", 2000)
-let id_9 = new Producto ("Auriculares samsung", 12000)
-let id_10 = new Producto ("Cargador x", 600)
-let id_11 = new Producto ("Cargador y", 4000)
-let id_12 = new Producto ("Cargador z", 800)
+
+let id_1 = new Telefono ("motorola", 11000)
+let id_2 = new Telefono ("nokia", 20000)
+let id_3 = new Telefono ("samsung", 12000)
+let id_4 = new Telefono ("motorola x", 2600)
+let id_5 = new Telefono ("samgung y", 54000)
+let id_6 = new Telefono ("nokia z", 32800)
+
 
 const proximo = {
     producto: "nextel",
