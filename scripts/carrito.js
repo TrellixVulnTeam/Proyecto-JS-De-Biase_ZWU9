@@ -12,8 +12,12 @@ for (let i = 0; i < localStorage.length; i++){
     let valor = JSON.parse(localStorage.getItem(clave))
     let p = document.createElement("p")
     total.push(valor.precio)
-    p.innerHTML = valor.producto + " $" + valor.precio
+    p.innerHTML = valor.producto + " $" + valor.precio + `<a id="${valor.producto}${valor.precio}" class="btn btn-outline-secondary" href="carrito.html" style="margin: 1% ;">Eliminar producto</a>`
     elementos.appendChild(p)
+    let elimProducto = document.getElementById(`${valor.producto}${valor.precio}`)
+    elimProducto.addEventListener("click", ()=>{
+        localStorage.removeItem(clave)
+    })
     
 }
 
@@ -112,4 +116,5 @@ function descuento(input){
 
 
 }
+
 

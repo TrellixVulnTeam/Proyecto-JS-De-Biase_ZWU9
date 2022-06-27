@@ -1,4 +1,4 @@
-
+//Nuevo producto
 class NuevoProducto {
     constructor(producto, precio, imagen){
         this.producto = producto
@@ -7,6 +7,7 @@ class NuevoProducto {
     }
 }   
 
+//Alertas
 function alerta(){
     Toastify({
         text:"Producto agregado",
@@ -26,17 +27,19 @@ function toastyDenegado(){
         }
     }).showToast()
 }
-
+//guardar en session storage
 function guardar(NuevoProducto, clave){
     let a = JSON.stringify(NuevoProducto)
     sessionStorage.setItem(clave, a)
 }
 
+//guardar el localStorage para el carritop
 function guardarLocal(b, c){
     let a = JSON.stringify(b)
     localStorage.setItem(c, a)
 }
 
+//tomar datos de imput
 let newProducto = document.getElementById("agregarProductos")
 newProducto.addEventListener("submit", newProducto1)
 
@@ -51,16 +54,11 @@ function newProducto1(x){
     else{
         let product = new NuevoProducto(producto, precio, "images/celulares/samsung.jpg")
         console.log(product)
-        guardar(product, product.producto)
-        document.getElementById("agregar").addEventListener("click", ()=>{
-            location.reload();
-        })
+        guardar(product, `Producto-${product.producto}`)
     }
-    
 }
 
-
-
+//Listar elementos agregados
 for (let i = 1; i < sessionStorage.length; i++){
     
     let contenedor = document.getElementById("contenedor")
@@ -80,6 +78,8 @@ for (let i = 1; i < sessionStorage.length; i++){
                             <div class="btn-group" role="group" aria-label="Basic outlined example">
                                 <button id="${valor.producto}" type="button" class="btn btn-outline-secondary">Agregar al carrito</button>
                             </div>
+
+                            <a id="${valor.producto}${valor.precio}" class="btn btn-outline-secondary" href="productos.html" style="margin: 1% ;">Eliminar elementos</a>
                             
                         </div>
                     </div>`
@@ -91,13 +91,16 @@ for (let i = 1; i < sessionStorage.length; i++){
         alerta()
         guardarLocal(valor, `${valor.producto}`)
     })
+    let elimProducto = document.getElementById(`${valor.producto}${valor.precio}`)
+    elimProducto.addEventListener("click", ()=>{
+        sessionStorage.removeItem(clave)
+    })
               
 }
 
+//validar cantidad de productos para mostrar
 const cantidadDeProductos = (sessionStorage.length > 1) ? true : false
-
 cantidadDeProductos ? eliminarTodo() : console.log("nada")
-
 function eliminarTodo(){
 
     let fuera = document.getElementById("eliminar")
