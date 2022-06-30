@@ -1,9 +1,8 @@
 //Agregar alerta al seleccionar el pago
-function metodoPago(totalProductos, cuotas, comision){
-    let precioTotal = totalProductos+((totalProductos*comision)/cuotas)
+function metodoPago(){
     Swal.fire({
-        title: "Antes de continuar",
-        text: `Cada cuota tendra un recargo(prefio final: $${precioTotal}) `,
+        title: "¿Estas seguro?",
+        text: `Estas a un paso de comprar los productos `,
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -137,15 +136,15 @@ function descuento(input){
 if( localStorage.length > 0){
     let mastercard = document.getElementById("master6")
         mastercard.addEventListener("click", ()=>{
-            metodoPago(totalProductos, 6, 0.10)
+            metodoPago()
         })
         let visa = document.getElementById("visa6")
         visa.addEventListener("click", ()=>{
-            metodoPago(totalProductos, 6, 0.20)
+            metodoPago()
         })
         let MercadoPago = document.getElementById("mercadoPago")
         MercadoPago.addEventListener("click", ()=>{
-            metodoPago(totalProductos, 3, 0.30)
+            metodoPago()
         })
         
 }
