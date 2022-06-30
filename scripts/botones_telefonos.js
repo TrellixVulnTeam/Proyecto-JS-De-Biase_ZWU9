@@ -14,12 +14,7 @@ let id_4 = new Telefono ("motorola x", 2600)
 let id_5 = new Telefono ("samgung y", 54000)
 let id_6 = new Telefono ("nokia z", 32800)
 
-
-const proximo = {
-    producto: "nextel",
-    precio: 2000
-}
-
+//Alerta de seleccion de producto
 function alerta(){
     Toastify({
         text:"Producto agregado",
@@ -30,11 +25,13 @@ function alerta(){
     }).showToast()
 }
 
-function guardar(b, c){
-    let a = JSON.stringify(b)
-    localStorage.setItem(c, a)
+//guarda el producto en el local Storage para el carrito
+function guardar(valorAGuardar, clave){
+    let a = JSON.stringify(valorAGuardar)
+    localStorage.setItem(clave, a)
 }
 
+//eventos a los productos
 let botonCarrito1 = document.getElementById("1")
 let botonCarrito2 = document.getElementById("2")
 let botonCarrito3 = document.getElementById("3")
@@ -44,37 +41,37 @@ let botonCarrito6 = document.getElementById("6")
 
 botonCarrito1.addEventListener("click", ()=>{
     alerta()
-    guardar(id_1, "producto1")
+    guardar(id_1, "motorola")
 })
 
 
 botonCarrito2.addEventListener("click", ()=>{
     alerta()
-    guardar(id_2, "producto2")
+    guardar(id_2, "nokia")
 })
 
 
 botonCarrito3.addEventListener("click", ()=>{
     alerta()
-    guardar(id_3, "producto3")
+    guardar(id_3, "samsung")
 })
 
 
 botonCarrito4.addEventListener("click", ()=>{
     alerta()
-    guardar(id_4, "producto4")
+    guardar(id_4, "motorola x")
 })
 
 
 botonCarrito5.addEventListener("click", ()=>{
     alerta()
-    guardar(id_5, "producto5")
+    guardar(id_5, "samgung y")
 })
 
 
 botonCarrito6.addEventListener("click", ()=>{
     alerta()
-    guardar(id_6, "producto6")
+    guardar(id_6, "nokia z")
 })
 
 

@@ -7,7 +7,7 @@ class NuevoProducto {
     }
 }   
 
-//Alertas
+//Alertas de producto agregado
 function alerta(){
     Toastify({
         text:"Producto agregado",
@@ -27,23 +27,26 @@ function toastyDenegado(){
         }
     }).showToast()
 }
+
 //guardar en session storage
-function guardar(NuevoProducto, clave){
-    let a = JSON.stringify(NuevoProducto)
+function guardar(valorAGuardar, clave){
+    let a = JSON.stringify(valorAGuardar)
     sessionStorage.setItem(clave, a)
 }
 
 //guardar el localStorage para el carritop
-function guardarLocal(b, c){
-    let a = JSON.stringify(b)
-    localStorage.setItem(c, a)
+function guardarLocal(valorAGuardar, clave){
+    let a = JSON.stringify(valorAGuardar)
+    localStorage.setItem(clave, a)
 }
 
-//tomar datos de imput
-let newProducto = document.getElementById("agregarProductos")
-newProducto.addEventListener("submit", newProducto1)
 
-function newProducto1(x){
+//tomar datos de imput para un nuevo producto
+let newProductos = document.getElementById("agregarProductos")
+newProductos.addEventListener("submit", newProducto)
+
+function newProducto(x){
+    
     x.preventDefault()
     let y = x.target
     let producto = y.children[0].value
@@ -53,12 +56,16 @@ function newProducto1(x){
     }
     else{
         let product = new NuevoProducto(producto, precio, "images/celulares/samsung.jpg")
-        console.log(product)
-        guardar(product, `Producto-${product.producto}`)
+        
+        guardar(product, `${product.producto}`)
+        nuevos.push(product)
+        
     }
 }
 
-//Listar elementos agregados
+
+//Listar elementos agregados.
+
 for (let i = 1; i < sessionStorage.length; i++){
     
     let contenedor = document.getElementById("contenedor")
@@ -67,40 +74,43 @@ for (let i = 1; i < sessionStorage.length; i++){
     tarjeta.classList.add("justify-content-center")
     let clave = sessionStorage.key(i)
     let valor = JSON.parse(sessionStorage.getItem(clave))
-    tarjeta.innerHTML =         
-                        `<div class="col-6 col-md-4 d-flex justify-content-center">
-                    
-                        <div class="p-3 border border-dark border-2 bordes">
-                            <div><h2>${valor.producto}</h2></div>
-                            <div><img src="${valor.imagen}" alt="Telefono samsung" class="bodyimg1"></div>
-                            <div><p>Precio: $${valor.precio}</p></div>
     
-                            <div class="btn-group" role="group" aria-label="Basic outlined example">
-                                <button id="${valor.producto}" type="button" class="btn btn-outline-secondary">Agregar al carrito</button>
-                            </div>
+    if(typeof valor == "boolean"){ 
+    }
+    else{
+            tarjeta.innerHTML =         
+                                `<div class="col-6 col-md-4 d-flex justify-content-center">
+                                <div class="p-3 border border-dark border-2 bordes">
+                                    <div><h2>${valor.producto}</h2></div>
+                                    <div><img src="${valor.imagen}" alt="Telefono samsung" class="bodyimg1"></div>
+                                    <div><p>Precio: $${valor.precio}</p></div>
+                                    <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                        <button id="${valor.producto}" type="button" class="btn btn-outline-secondary">Agregar al carrito</button>
+                                    </div>
+                                    <a id="${valor.producto}${valor.precio}" class="btn btn-outline-secondary" href="productos.html" style="margin: 1% ;">Eliminar elementos</a>
+                                    
+                                </div>
+                            </div>`
 
-                            <a id="${valor.producto}${valor.precio}" class="btn btn-outline-secondary" href="productos.html" style="margin: 1% ;">Eliminar elementos</a>
-                            
-                        </div>
-                    </div>`
+            
+            contenedor.appendChild(tarjeta)
 
+            let boton = document.getElementById(`${valor.producto}`)
+            boton.addEventListener("click", ()=>{
+                alerta()
+                guardarLocal(valor, `${valor.producto}`)
+            })
 
-    contenedor.appendChild(tarjeta)
-    let boton = document.getElementById(`${valor.producto}`)
-    boton.addEventListener("click", ()=>{
-        alerta()
-        guardarLocal(valor, `${valor.producto}`)
-    })
-    let elimProducto = document.getElementById(`${valor.producto}${valor.precio}`)
-    elimProducto.addEventListener("click", ()=>{
-        sessionStorage.removeItem(clave)
-    })
+            let elimProducto = document.getElementById(`${valor.producto}${valor.precio}`)
+            elimProducto.addEventListener("click", ()=>{
+                sessionStorage.removeItem(clave)
+            })
               
-}
+}}
 
 //validar cantidad de productos para mostrar
 const cantidadDeProductos = (sessionStorage.length > 1) ? true : false
-cantidadDeProductos ? eliminarTodo() : console.log("nada")
+cantidadDeProductos ? eliminarTodo() : false
 function eliminarTodo(){
 
     let fuera = document.getElementById("eliminar")
@@ -113,3 +123,16 @@ function eliminarTodo(){
     sessionStorage.clear()
     })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

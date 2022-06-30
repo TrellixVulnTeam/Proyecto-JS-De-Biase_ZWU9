@@ -5,15 +5,14 @@ class Accesorios {
     }
 }
 
-
-
-let id_7 = new Accesorios ("Auriculares", 1000)
+let id_7 = new Accesorios ("Cargador", 15000)
 let id_8 = new Accesorios ("Auriculares nokia", 2000)
-let id_9 = new Accesorios ("Auriculares samsung", 12000)
-let id_10 = new Accesorios ("Cargador x", 600)
+let id_9 = new Accesorios ("Cargador samsung", 12000)
+let id_10 = new Accesorios ("Auriculares x", 6000)
 let id_11 = new Accesorios ("Cargador y", 4000)
-let id_12 = new Accesorios ("Cargador z", 800)
+let id_12 = new Accesorios ("Auriculares z", 8000)
 
+//alerta de se agrego el producto
 function alerta(){
     Toastify({
         text:"Producto agregado",
@@ -23,12 +22,14 @@ function alerta(){
         }
     }).showToast()
 }
-function guardar(b, c){
-    let a = JSON.stringify(b)
-    localStorage.setItem(c, a)
+
+//funcion que guarda el producto en el localStorage para el carrito
+function guardar(elementoAGuardar, clave){
+    let a = JSON.stringify(elementoAGuardar)
+    localStorage.setItem(clave, a)
 }
 
-
+//eventos para la seleccion de productos
 let botonCarrito1 = document.getElementById("7")
 let botonCarrito2 = document.getElementById("8")
 let botonCarrito3 = document.getElementById("9")
@@ -38,30 +39,30 @@ let botonCarrito6 = document.getElementById("12")
 
 botonCarrito1.addEventListener("click", ()=>{
     alerta()
-    guardar(id_7, "producto7")
+    guardar(id_7, "Cargador")
 })
 
 botonCarrito2.addEventListener("click", ()=>{
     alerta()
-    guardar(id_8, "producto8")
+    guardar(id_8, "Auriculares nokia")
 })
 
 botonCarrito3.addEventListener("click", ()=>{
     alerta()
-    guardar(id_9, "producto9")
+    guardar(id_9, "Cargador samsung")
 })
 
 botonCarrito4.addEventListener("click", ()=>{
     alerta()
-    guardar(id_10, "producto10")
+    guardar(id_10, "Auriculares x")
 })
 
 botonCarrito5.addEventListener("click", ()=>{
     alerta()
-    guardar(id_11, "producto11")
+    guardar(id_11, "Cargador y")
 })
 
 botonCarrito6.addEventListener("click", ()=>{
     alerta()
-    guardar(id_12, "producto12")
+    guardar(id_12, "Auriculares z")
 })

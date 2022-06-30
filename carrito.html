@@ -45,7 +45,7 @@
                     <a class="nav-link" href="carrito.html">Carrito</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="calcular.html">Calcular Cuotas</a>
+                    <a class="nav-link" href="promo.html">Premio</a>
                   </li>
                 </ul>
               </div>
@@ -75,10 +75,16 @@
                     <form id="cupon">
                       <p id="texto"><b>AGREGAR CUPON DE DESCUENTO</b></p>
                       <input type="number" placeholder="precio de su producto" style="border-radius: 20px; text-align: center; margin-bottom: 1%;">
-                      <p><input type="submit" value="Caluclar" id="botonCalcular" class="btn btn-outline-secondary"></p>
+                      <p><input type="submit" value="Aplicar" id="botonCalcular" class="btn btn-outline-secondary"></p>
                     </form>
                     
-                    
+                    <hr>
+                    <p>METODOS DE PAGO</p>
+                    <div style="margin: 1%;">
+                      <button id="master6" class="btn btn-outline-secondary">Mastercard 6 cuotas </button>
+                      <button id="visa6" class="btn btn-outline-secondary">Visa 6 cuotas </button> 
+                      <button id="mercadoPago" class="btn btn-outline-secondary">Mercado Pago </button>
+                    </div>
                 </div>
             </div>
     </main>
@@ -91,7 +97,7 @@
     
     </footer>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="scripts/carrito.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
